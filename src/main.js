@@ -5,6 +5,7 @@ import jQuery from 'jquery'
 import mui from 'assets/js/lib/mui'
 import 'assets/css/lib/mui'
 import 'assets/css/lib/style'
+import 'assets/css/lib/sprity'
 
 
 window.jQuery = window.$ = jQuery;

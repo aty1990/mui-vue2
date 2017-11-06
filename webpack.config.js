@@ -1,6 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 const IS_ENV = process.env.NODE_ENV == 'production'
 
 var plugins = []
@@ -52,10 +53,18 @@ plugins.push(
         template: './src/app/app.html' //html模板路径
     })
 )
+plugins.push(
+    // 拆分插件
+    new webpack.optimize.CommonsChunkPlugin({
+        name:'common', // 注意不要.js后缀
+        chunks:['user']
+    })
+)
 
 module.exports = {
     entry: {
-        build:'./src/main.js'
+        'build':'./src/main.js',
+        'user':['./src/assets/js/home/home.js','./src/assets/js/home/app.js']
     },
     output: {
         path: path.resolve(__dirname, './dist'),

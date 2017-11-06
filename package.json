@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
-    "build": "cross-env NODE_ENV=production gulp devBuild"
+    "build": "cross-env NODE_ENV=production"
   },
   "dependencies": {
     "jquery": "^2.2.3",
@@ -25,6 +25,7 @@
     "file-loader": "^0.9.0",
     "gulp": "^3.9.1",
     "gulp-sftp": "^0.1.5",
+    "gulp.spritesmith": "^6.5.1",
     "html-webpack-plugin": "^2.24.0",
     "postcss-loader": "^1.3.3",
     "style-loader": "^0.13.1",
